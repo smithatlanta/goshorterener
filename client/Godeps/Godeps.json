@@ -1,0 +1,19 @@
+{
+	"ImportPath": "github.com/smithatlanta/goshortener/client",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v75",
+	"Deps": [
+		{
+			"ImportPath": "github.com/inconshreveable/mousetrap",
+			"Rev": "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
+		},
+		{
+			"ImportPath": "github.com/spf13/cobra",
+			"Rev": "9d9ce1213e32036f555185d5a7df854d6f801ef8"
+		},
+		{
+			"ImportPath": "github.com/spf13/pflag",
+			"Rev": "1560c1005499d61b80f865c04d39ca7505bf7f0b"
+		}
+	]
+}
