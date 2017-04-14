@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/smithatlanta/goshortener/lib"
 	"github.com/spf13/cobra"
 )
 
@@ -19,18 +20,18 @@ func init() {
 }
 
 func create(cmd *cobra.Command, args []string) {
-	var url = args[0]
-	var desiredShortcut = args[1]
-	shortenedURL, err := Create(url, desiredShortcut)
+	var desiredShortcut = args[0]
+	var url = args[1]
+	var projectID = args[2]
+	err := Create(desiredShortcut, url, projectID)
 	if err != nil {
-		fmt.Println("Create Failed")
+		fmt.Println(err)
 	}
-	println(shortenedURL)
 	return
 }
 
 //Create -
-func Create(url string, desiredShortcut string) (string, error) {
-	CreateShortenedURL(desiredShortcut, url)
-	return "", nil
+func Create(desiredShortcut string, url string, projectID string) error {
+	err := lib.CreateShortenedURL(desiredShortcut, url, projectID)
+	return err
 }
