@@ -22,20 +22,16 @@ func init() {
 func get(cmd *cobra.Command, args []string) {
 	var shortcut = args[0]
 	var projectID = args[1]
-	fmt.Println(shortcut)
-	fmt.Println(projectID)
 	fullURL, err := Get(shortcut, projectID)
 	if err != nil {
 		fmt.Println(err)
 	}
-	println(fullURL)
+	fmt.Println(fullURL)
 	return
 }
 
 //Get -
 func Get(shortcut string, projectID string) (string, error) {
 	url, err := lib.GetShortenedURL(shortcut, projectID)
-	fmt.Printf(url)
-	fmt.Println(err)
 	return url, err
 }
